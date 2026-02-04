@@ -271,18 +271,24 @@
             </div>
           </div>
           <form
+            id="contactForm"
+            class="contact-form"
             action="https://formsubmit.co/fadlanmuhamadfam@gmail.com"
             method="POST"
           >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Pesan Baru dari Portfolio Fadlan"
+            />
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" style="display: none" />
 
-            <!-- INI KUNCI NYA -->
-            <input
+            <!-- <input
               type="hidden"
               name="_next"
               value="https://muhamadfadlann.github.io/Portofolio/#contact"
-            />
+            /> -->
 
             <input type="text" name="name" placeholder="Your Name" required />
             <input
@@ -298,8 +304,13 @@
               required
             ></textarea>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit">Send Message</button>
           </form>
+          <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Pesan Terkirim!</h3>
+            <p>Terima kasih, aku akan balas secepatnya 🚀</p>
+          </div>
         </div>
       </div>
     </section>
@@ -341,6 +352,35 @@
       });
 
       fadeInElements.forEach((el) => observer.observe(el));
+
+      const form = document.getElementById("contactForm");
+      const successMessage = document.getElementById("successMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.style.display = "none";
+              successMessage.style.display = "block";
+              form.reset();
+            } else {
+              alert("Gagal mengirim pesan 😢");
+            }
+          })
+          .catch(() => {
+            alert("Terjadi kesalahan. Coba lagi.");
+          });
+      });
     </script>
   </body>
 </html>

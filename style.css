@@ -799,3 +799,76 @@ nav ul li a:hover::after {
     opacity: 1;
     transform: translateY(0);
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(230, 57, 70, 0.4);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e63946;
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(135deg, #e63946, #c41e3a);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.6);
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(230, 57, 70, 0.8);
+}
+
+
+.success-message {
+  display: none;              /* ini kuncinya */
+  margin-top: 20px;
+  color: #4ade80;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
