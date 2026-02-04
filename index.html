@@ -26,7 +26,9 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="cv/Fadlan - CV.pdf" class="btn-resume" download>CV</a></li>
+          <li>
+            <a href="cv/Fadlan - CV.pdf" class="btn-resume" download>CV</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -199,12 +201,21 @@
         <div class="contact-content">
           <div class="contact-info fade-in">
             <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <h3>Email</h3>
-              <p>fadlanmuhamadfam@gmail.com</p>
+              <!-- <a href="mailto:fadlanmuhamadfam@gmail.com" class="social-link"> -->
+              <a
+                href="mailto:fadlanmuhamadfam@gmail.com
+?subject=Contact%20from%20Portfolio
+&body=Halo%20Fadlan,%0ASaya%20tertarik%20untuk%20bekerja%20sama."
+                class="social-link"
+              >
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>fadlanmuhamadfam@gmail.com</p>
+              </a>
             </div>
+
             <div class="contact-card">
               <div class="contact-icon">
                 <i class="fas fa-phone"></i>
@@ -260,49 +271,33 @@
             </div>
           </div>
           <form
-            class="contact-form fade-in"
-            action="https://formsubmit.co/muhamadfadlanhamid@gmail.com"
+            action="https://formsubmit.co/fadlanmuhamadfam@gmail.com"
             method="POST"
           >
-            <!-- Honeypot -->
+            <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" style="display: none" />
 
-            <!-- Disable Captcha -->
-            <input type="hidden" name="_captcha" value="false" />
-
-            <!-- Success page -->
+            <!-- INI KUNCI NYA -->
             <input
               type="hidden"
               name="_next"
-              value="https://yourwebsite.com/thanks.html"
+              value="https://muhamadfadlann.github.io/Portofolio/#contact"
             />
 
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-              ></textarea>
-            </div>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+
             <button type="submit" class="submit-btn">Send Message</button>
           </form>
         </div>
