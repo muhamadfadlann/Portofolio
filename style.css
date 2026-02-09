@@ -106,7 +106,16 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.logo:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 }
 
 .logo-img {
@@ -176,13 +185,19 @@ nav ul li a:hover::after {
   color: #FFFFFF !important;
   border-radius: 10px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(15, 82, 186, 0.2);
 }
 
 .btn-resume:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(15, 82, 186, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(15, 82, 186, 0.35);
+}
+
+.btn-resume:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(15, 82, 186, 0.25);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Enhanced Hero Section */
